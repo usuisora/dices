@@ -1,0 +1,17 @@
+
+
+
+export const GET_BATTLES  ='GET_BATTLES'
+export const POST_CLOSED_BATTLE ='POST_CLOSED_BATTLE'
+export const POST_OPEN_BATTLE ='POST_OPEN_BATTLE'
+export const DROP_OPEN_BATTLE ='POST_OPEN_BATTLE'
+
+export const GET_SEC_PLAYER ='GET_SEC_PLAYER'
+
+export const POST_SEC_PLAYER ='POST_SEC_PLAYER'
+
+export const GET_PUTBILLS  ='GET_PUTBILLS'
+export const POST_PUTBILL ='POST_PUTBILL'
+
+export const GET_ME = 'GET_ME'
+export const DROP_ME ='DROP_ME'//

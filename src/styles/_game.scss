@@ -1,0 +1,126 @@
+.updice  {
+    animation: popdice 4s forwards ease;
+    // transition: cubic-bezier(0.075, 0.82, 0.165, 1) ;
+
+}
+
+
+.dice:hover{
+    color: red
+}
+
+.updice:hover {
+    box-shadow: red 1px 2px 6px
+}
+@keyframes popdice {
+   0% {
+        opacity: 0;
+        border-radius: 30px;
+        color: black;
+        background-color: black;
+        box-shadow: 5px -5px 6px rgb(0, 15, 99),-5px 5px 6px rgb(255, 0, 0),-5px -5px 6px rgb(238, 241, 6),5px 5px 6px rgb(8, 247, 0)
+       
+    }
+    76% {
+        opacity: 0.5;
+        border-radius: 25px;
+        color: black;
+        background-color: black;
+        box-shadow: 5px 5px 6px rgb(0, 15, 99),-5px -5px 6px rgb(255, 0, 0),5px -5px 6px rgb(238, 241, 6),-5px 5px 6px rgb(8, 247, 0);
+        border-color: black
+    }   
+    89%{
+        border-color: white;
+        opacity: 0.7;
+        border-radius: 15px;
+        color: black;
+        background-color: black;
+        box-shadow: 5px 6px 6px white,-5px -4px 6px white,5px -4px 6px white,-5px 6px 6px white
+
+    }
+    100%{
+        border-color: inherit;
+        opacity: 1;
+        border-radius: 10px;
+        color: #ddd;
+        background-color: inherit;
+        border-color: #999;
+    }
+}
+
+#res{
+    color: $nav-color;
+}
+
+.result{
+    animation: blur 1s forwards ease-in 
+    
+}
+
+
+.blurup{
+    animation:
+       downslide 0.6s forwards ease-in
+}
+@keyframes downslide{
+    0% {
+        top : -30%;
+        opacity:0
+    }
+    93%{
+        top : 20%;
+        opacity:0.9
+    }
+    100%{
+        top : 14%;
+        opacity:1
+    }
+}
+@keyframes blur{
+     0%{
+         color: $nav-color;
+         opacity: 0;
+         
+     }
+
+    30% {
+         text-shadow: 2px 0px 10px #0ff,0px 2px 10px #f00 ;
+         color: $nav-color;
+         opacity: 0.5;
+        
+     }
+
+     70%{
+        text-shadow: 2px 0px 10px #40f,0px 2px 10px #ff0 ;
+        color: $nav-color;
+        opacity: 0.7;
+     }
+     100%{
+         color: white;
+         opacity: 1
+     }
+}
+
+.opacity0{
+    opacity: 0;
+}
+
+#resWin{
+   z-index: 2;
+    position: absolute;
+    font-size: 180%;
+    top:-10%;
+    width : 50%;
+    margin: 0 25%;
+    color:  white;
+    // opacity: 1;
+    p {
+        margin-block-start: 10%;
+        padding-block-start: 10%
+    }
+    button{
+        opacity: 1;
+        background-color:  $main-color;
+        margin:10%
+    }
+}

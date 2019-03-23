@@ -1,0 +1,166 @@
+$opt-color: rgb(211, 211, 211);
+$nav-color: rgb(44, 75, 105);
+$main-color: rgb(28, 45, 61);
+$main-color-2: rgb(25, 42, 57);
+$main-color-0:  rgb(38, 69, 99);
+.pari{
+   color:white;
+   display: grid;
+   grid-template-columns: repeat(5,1fr);
+   border-block-end: 1px solid $nav-color;
+   padding: 4px;
+   width: 90%;
+   margin: 0 auto;
+
+   button{
+       grid-column:  5/6;
+       color: grey;
+       border-radius: 3px;
+       padding: 3px;
+       background-color:$nav-color; 
+       border : solid $nav-color 1px;
+
+   }
+
+}
+.pari:hover{
+    background-color: $main-color-0
+}    
+
+h3{
+    color: fff
+}
+
+#lobby{
+
+    height: 100%;
+    background-color: $main-color;
+}
+
+card input[type=text]{
+  padding: 10px;
+
+ }
+ input[type=text]:focus  {
+
+    color: #222;
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+.mSearch input[type=text] {
+    color: white
+}
+
+
+
+.moneysearch{
+    
+   color: white;
+     
+    background: $main-color;
+   margin: 0 30%
+    input{
+        display: inline-block;
+    
+    }
+    
+}
+.create{
+ margin : 0 auto;
+ width : 80%;
+ display: inline;
+ margin: 0 auto;
+
+}
+
+
+.main-color{
+    padding: 20px;
+    border: #888 3px dashed;
+    margin : 30px 10% ;
+    width: 60%;
+    background-color: $nav-color;
+    opacity: 0;
+    animation: shoove 0.3s ease-in   forwards ;
+
+}
+@keyframes shoove {
+    0%{
+        transform: translateX(-400px);
+        opacity: 0.0;
+    }
+    
+    100%{
+        transform: translateX(0px);
+        opacity: 1; 
+    }
+}
+
+.lobbyStop{
+    background-color: $nav-color;
+    width : 100%;
+    height: 4px;
+    padding-block-start: 1px;
+    border-radius: 0 0 3px 3px;
+     
+
+}
+
+.module{
+    padding-block-end: 20px;
+    opacity: 0;
+    position: absolute;
+    background-color: black; 
+    color: $nav-color;
+    width: 50%;
+    left: 25%;
+    top : -100px;
+    box-shadow: 1px 12px 12px  rgb(0, 0, 0) ;
+   button{
+       
+       color: black
+   }
+   input{
+       font-size: 190%;
+       color: $nav-color
+   }
+   
+}
+
+.popup{
+    animation: pop 1s ease-out   forwards ;
+
+}
+
+.popout{
+    animation: out 1s ease-out   forwards ;
+  
+}
+
+
+
+@keyframes pop {
+    from {
+        
+        opacity: 0.1;
+        // top: -700px
+    }
+    to{
+    //    top : -100px;
+        opacity: 1;
+    }
+}
+
+@keyframes out {
+    from {
+        
+        // top : -100px;
+        opacity: 1;
+
+    }
+    to{
+      
+        opacity: 0;
+        // top: -700px
+    }
+}
