@@ -77,7 +77,8 @@ export class OptInfo extends Component {
        <div>
          <ResWin  status={this.state.status} repeatMatch={this.repeatMach}/>
        <div id='optinfo' className='card'>
-        <div className="center" id = 'res' >{4} {':'} {3}</div>
+        <div className="center" id = 'res' >{this.props.state.states[0]+this.props.state.states[1]} {': '}
+           {this.props.state.states[2]+this.props.state.states[3]}</div>
         </div>
      <div className="status">   {
           this.state.chronology.map(el=>{

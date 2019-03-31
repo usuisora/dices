@@ -9,16 +9,10 @@ export class Game extends Component {
 
 
   state =  {
-    //  res :  this.props.res()
-  }
- 
-  start = () =>{
-    console.log('start');
-    // this.props.getRand()
+    states  : []
   }
 
   showUpDices = () =>{
-    console.log('fdsfsdf')
     var game  = document.getElementById('game');
     var dices = game.getElementsByClassName('dice');
     dices[0].className = 'dice updice'
@@ -26,12 +20,10 @@ export class Game extends Component {
   }
 
   showDownDices = ()=>{
-    console.log('adsdasd')
     var game  = document.getElementById('game');
     var dices = game.getElementsByClassName('dice');
     dices[1].className = 'dice updice'
     dices[3].className = 'dice updice'
-    // this.formRes()
   }
 
   unmount =()=>{
@@ -49,14 +41,15 @@ export class Game extends Component {
     setTimeout(this.start, 1000);
       setTimeout(this.showUpDices,2000);
       setTimeout(this.showDownDices, 5000);
-      setTimeout(this.showResult, 5500);
+      // setTimeout(this.showResult, 5500);
   }
+componentWillMount =()=>{
+  this.setState({
+    states:[this.getRand(),this.getRand(),this.getRand(),this.getRand()]
+  })
+}
+   componentDidMount = () =>{
 
-   componentDidMount = () =>
-  {
-   
-      
-    // console.log(this.props)
     this.props.getSecPlayer();
     this.props.getMe()
     this.unmount()
@@ -70,8 +63,8 @@ export class Game extends Component {
   formRes = () =>{
 
      var users = document.getElementsByClassName('userdata');
-    var res1 = parseInt(users[0].getElementsByTagName('button')[0].innerHTML) + parseInt(users[0].getElementsByTagName('button')[1].innerHTML )
-    var res2 = parseInt(users[1].getElementsByTagName('button')[0].innerHTML) + parseInt(users[1].getElementsByTagName('button')[1].innerHTML )
+    var res1 = this.state.states[0] +  this.state.states[1]
+    var res2 = this.state.states[2] +  this.state.states[3]
      var winner = parseInt(res1)>parseInt(res2) ? users[0].id : users[1].id
      var res = {
       playerIds : [users[0].id ,users[1].id],
@@ -98,21 +91,21 @@ export class Game extends Component {
                 <div id = 'user1' className='card user' >
                  <div className="card-content userdata" id = {me.id}>
                  <p className='username' >{me.name}</p>
-                 <div><button className='dice' id ='dice1'>{this.getRand()}</button></div>
-                    <div><button className='dice'>{this.getRand()}</button></div>
+                 <div><button className='dice' id ='dice1'>{this.state.states[0]}</button></div>
+                    <div><button className='dice'>{this.state.states[1]}</button></div>
                  </div>
                 </div>
 
                 <div id = 'user2' className=' card user'  >
                     <div className="card-content userdata" id = {secPlayer.id}>
                     <p className=' username red-text' >{secPlayer.name}</p>
-                      <div><button className='dice' >{this.getRand()}</button></div>
-                      <div><button className='dice'>{this.getRand()}</button></div>
+                      <div><button className='dice' >{this.state.states[2]}</button></div>
+                      <div><button className='dice'>{this.state.states[3]}</button></div>
                   </div>
                 </div>
                 
                 <div className="opt">
-                    <OptInfo  getRes = {this.formRes}  meid = {me.id}  secid = {secPlayer.id}
+                    <OptInfo  getRes = {this.formRes} state = {this.state}  meid = {me.id}  secid = {secPlayer.id}
                     load = {this.load}    unmount = {this.unmount}/>
                 </div>
 
